@@ -1,0 +1,65 @@
+<div class="panel-body">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-horizontal" role="form" ng-controller="RegisterCtrl">
+                <!--<div class="form-group">-->
+                    <!--<label class="col-md-2 control-label">-->
+                        <!--ID：-->
+                    <!--</label>-->
+                    <!--<div class="col-md-10">-->
+                        <!--<input type="id" class="form-control" placeholder="推荐使用126邮箱" ng-model="userInfo.id">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="form-group">
+                    <label class="col-md-2 control-label">
+                        姓名：
+                    </label>
+                    <div class="col-md-10">
+                        <input type="name" class="form-control" placeholder="请使用英文字符" ng-model="userInfo.name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">
+                        年龄：
+                    </label>
+                    <div class="col-md-10">
+                        <input type="age" class="form-control" placeholder="数字" ng-model="userInfo.age">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">
+                        邮箱：
+                    </label>
+                    <div class="col-md-10">
+                        <input type="email" class="form-control" placeholder="推荐使用126邮箱" ng-model="userInfo.email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">
+                        密码：
+                    </label>
+                    <div class="col-md-10">
+                        <input type="password" class="form-control" placeholder="只能是数字、字母、下划线"
+                               ng-model="userInfo.password">
+                    </div>
+                </div>
+                <!--<div class="form-group">-->
+                    <!--<div class="col-md-offset-2 col-md-10">-->
+                        <!--<div class="checkbox">-->
+                            <!--<label>-->
+                                <!--<input type="checkbox" ng-model="autoLogin">自动登录-->
+                            <!--</label>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <!--<button class="btn btn-default" ng-click="getFormData()">获取Form表单的值</button>-->
+                        <button class="btn btn-default" ng-click="addUser()">确认</button>
+                        <button class="btn btn-default" ng-click="resetForm()">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
