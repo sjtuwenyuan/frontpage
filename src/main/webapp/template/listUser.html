@@ -1,7 +1,7 @@
 <div class="panel-heading">
 <div class="panel-title">用户信息</div>
 </div>
-<table class="table table-bordered" ng-controller="UserListCtrl">
+<table class="table table-bordered" ng-controller="UserInfoCtrl">
     <thead>
     <tr>
         <th>ID</th>
@@ -11,7 +11,8 @@
         <th>密码</th>
     </tr>
     </thead>
-    <tbody data-ng-init="getAllUser()">
+    <!--<tbody data-ng-init="getAllUser()">-->
+    <tbody>
     <tr ng-repeat="user in users">
         <td>{{user.id}}</td>
         <td>{{user.name}}</td>

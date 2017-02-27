@@ -1,0 +1,25 @@
+<div class="panel-heading">
+    <div class="panel-title">查询用户</div>
+</div>
+<table class="table table-bordered" ng-controller="UserQueryCtrl">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>邮箱</th>
+        <th>密码</th>
+    </tr>
+    </thead>
+    <!--<tbody data-ng-init="queryAllUser()">-->
+    <button ng-click="queryAllUser()">chaxun</button>
+    <tbody>
+    <tr ng-repeat="user in users">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+    </tr>
+    </tbody>
+</table>

@@ -8,23 +8,56 @@
     <script src="framework/1.3.0.14/angular.js"></script>
     <script src="framework/1.3.0.14/angular-route.js"></script>
     <script src="framework/1.3.0.14/angular-animate.js"></script>
-    <!--<script src="js/app.js"></script>-->
     <script src="js/controllers.js"></script>
-    <!--<script src="js/filters.js"></script>-->
-    <!--<script src="js/services.js"></script>-->
-    <!--<script src="js/directives.js"></script>-->
 </head>
 
-<body>
-<div class="panel panel-primary" ng-controller="UserInfoCtrl">
-    <ul class="nav nav-pills">
-        <li ng-repeat="choice in choices" ng-class="{active: currentUrl == choice.url}">
-            <a href="{{choice.url}}" ng-click="onClick($event.target)">{{choice.page}}</a>
-        </li>
-    </ul>
-    <div ng-show="isListUser" ng-include="'template/listUser.html'"></div>
-    <div ng-show="isRegister" ng-include="'template/register.html'"></div>
+<body ng-controller="UserInfoCtrl">
+<div class="col-md-12">
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-md-2 control-label">
+                开始时间：
+            </label>
+            <div class="col-md-6">
+                <input class="form-control" placeholder="yyyy-MM-dd HH:mm:ss" ng-model="queryInfo.startTime">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">
+                开始时间：
+            </label>
+            <div class="col-md-6">
+                <input class="form-control" placeholder="yyyy-MM-dd HH:mm:ss" ng-model="queryInfo.endTime">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">
+                IMSI：
+            </label>
+            <div class="col-md-6">
+                <input class="form-control" placeholder="16位数字" ng-model="queryInfo.imsi">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button class="btn btn-default" ng-click="queryUfdr()">查询</button>
+                <button class="btn btn-default" ng-click="resetForm()">重置</button>
+            </div>
+        </div>
+    </form>
 </div>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th ng-repeat="subscribeField in ufdrs.subscribeFields">{{ufdrs.columName[subscribeField]}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="record in ufdrs.records">
+        <td ng-repeat="subscribeField in ufdrs.subscribeFields">{{record[subscribeField]}}</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 
 </html>

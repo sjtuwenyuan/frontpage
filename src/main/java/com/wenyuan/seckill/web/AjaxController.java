@@ -31,6 +31,7 @@ public class AjaxController {
         return seckillService.getAllUser();
     }
 
+
     @RequestMapping(value = "/add/people", method = RequestMethod.POST)
     @ResponseBody
     public String addUser(@RequestBody Person person) {
