@@ -31,7 +31,7 @@ userCtrls.controller('UserInfoCtrl', ['$scope', "$http",
             var endTimes = $scope.queryInfo.endTime.split(" ");
             $scope.queryInfo.endTime = endTimes[0] + '-' + endTimes[1];
 
-            var url = 'query/ufdr' + '/starttime/' + $scope.queryInfo.startTime +
+            var url = '/query/ufdr' + '/starttime/' + $scope.queryInfo.startTime +
                 '/endtime/' + $scope.queryInfo.endTime + '/imsi/' + $scope.queryInfo.imsi;
             $http.get(url).success(function (data) {
                 $scope.ufdrs = data;

@@ -1,5 +1,6 @@
 package com.wenyuan.seckill.web;
 
+import com.wenyuan.seckill.annotation.Authorization;
 import com.wenyuan.seckill.entity.ChargingCheckResult;
 import com.wenyuan.seckill.service.ChargingCheckService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,7 @@ public class ChargingCheckController extends BaseExceptionHandleAction {
 
     @RequestMapping(value = "/query/ufdr/starttime/{startTime}/endtime/{endTime}/imsi/{imsi}",
             method = RequestMethod.GET)
+    @Authorization
     @ResponseBody
     public ChargingCheckResult queryUfdr(@PathVariable("startTime") String startTime,
                                          @PathVariable("endTime") String endTime,
